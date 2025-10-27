@@ -19,3 +19,8 @@ cd lacakip
 pip3 install -r requirements.txt
 python3 d.py
 ```
+### UNTUK MENJALANKAN
+```
+cd lacakip
+python3 d.py
+```
