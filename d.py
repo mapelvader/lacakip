@@ -1,11 +1,3 @@
-#!/usr/bin/python
-# << CODE BY HUNX04
-# << MAU RECODE ??? IZIN DULU LAH,  MINIMAL TAG AKUN GITHUB MIMIN YANG MENGARAH KE AKUN INI, LEBIH GAMPANG SI PAKE FORK
-# << KALAU DI ATAS TIDAK DI IKUTI MAKA AKAN MENDAPATKAN DOSA KARENA MIMIN GAK IKHLAS
-# “Wahai orang-orang yang beriman! Janganlah kamu saling memakan harta sesamamu dengan jalan yang batil,” (QS. An Nisaa': 29). Rasulullah SAW juga melarang umatnya untuk mengambil hak orang lain tanpa izin.
-
-# IMPORT MODULE
-
 import json
 import requests
 import time
@@ -39,9 +31,9 @@ def is_option(func):
 # FUNCTIONS FOR MENU
 @is_option
 def IP_Track():
-    ip = input(f"{Wh}\n Enter IP target : {Gr}")  # INPUT IP ADDRESS
+    ip = input(f"{Wh}\n Masukan IP target : {Gr}")  # INPUT IP ADDRESS
     print()
-    print(f' {Wh}============= {Gr}SHOW INFORMATION IP ADDRESS {Wh}=============')
+    print(f' {Wh}============= {Gr}MENAMPILKAN INFORMASI IP {Wh}=============')
     req_api = requests.get(f"http://ipwho.is/{ip}")  # API IPWHOIS.IS
     ip_data = json.loads(req_api.text)
     time.sleep(2)
@@ -80,7 +72,7 @@ def IP_Track():
 @is_option
 def phoneGW():
     User_phone = input(
-        f"\n {Wh}Enter phone number target {Gr}Ex [+6281xxxxxxxxx] {Wh}: {Gr}")  # INPUT NUMBER PHONE
+        f"\n {Wh}Masukan Nomor Ponsel Target {Gr}cnth [+6281xxxxxxxxx] {Wh}: {Gr}")  # INPUT NUMBER PHONE
     default_region = "ID"  # DEFAULT NEGARA INDONESIA
 
     parsed_number = phonenumbers.parse(User_phone, default_region)  # VARIABLE PHONENUMBERS
@@ -96,7 +88,7 @@ def phoneGW():
     timezone1 = timezone.time_zones_for_number(parsed_number)
     timezoneF = ', '.join(timezone1)
 
-    print(f"\n {Wh}========== {Gr}SHOW INFORMATION PHONE NUMBERS {Wh}==========")
+    print(f"\n {Wh}========== {Gr}MENAMPILKAN INFORMASI NOMOR PONSEL {Wh}==========")
     print(f"\n {Wh}Location             :{Gr} {location}")
     print(f" {Wh}Region Code          :{Gr} {region_code}")
     print(f" {Wh}Timezone             :{Gr} {timezoneF}")
@@ -121,7 +113,7 @@ def phoneGW():
 @is_option
 def TrackLu():
     try:
-        username = input(f"\n {Wh}Enter Username : {Gr}")
+        username = input(f"\n {Wh}Masukan Username akun target : {Gr}")
         results = {}
         social_media = [
             {"url": "https://www.facebook.com/{}", "name": "Facebook"},
@@ -155,12 +147,12 @@ def TrackLu():
             if response.status_code == 200:
                 results[site['name']] = url
             else:
-                results[site['name']] = (f"{Ye}Username not found {Ye}!")
+                results[site['name']] = (f"{Ye}Username tidak di ketahui {Ye}!")
     except Exception as e:
         print(f"{Re}Error : {e}")
         return
 
-    print(f"\n {Wh}========== {Gr}SHOW INFORMATION USERNAME {Wh}==========")
+    print(f"\n {Wh}========== {Gr}MENAMPILKAN INFORMASI USERNAME{Wh}==========")
     print()
     for site, url in results.items():
         print(f" {Wh}[ {Gr}+ {Wh}] {site} : {Gr}{url}")
@@ -171,8 +163,8 @@ def showIP():
     respone = requests.get('https://api.ipify.org/')
     Show_IP = respone.text
 
-    print(f"\n {Wh}========== {Gr}SHOW INFORMATION YOUR IP {Wh}==========")
-    print(f"\n {Wh}[{Gr} + {Wh}] Your IP Adrress : {Gr}{Show_IP}")
+    print(f"\n {Wh}========== {Gr}MENAMPILKAN INFORMASI ALAMAT IP {Wh}==========")
+    print(f"\n {Wh}[{Gr} + {Wh}] Alamat ip : {Gr}{Show_IP}")
     print(f"\n {Wh}==============================================")
 
 
@@ -260,13 +252,8 @@ def option():
     # BANNER TOOLS
     clear()
     stderr.writelines(f"""
-       ________               __      ______                __  
-      / ____/ /_  ____  _____/ /_    /_  __/________ ______/ /__
-     / / __/ __ \/ __ \/ ___/ __/_____/ / / ___/ __ `/ ___/ //_/
-    / /_/ / / / / /_/ (__  ) /_/_____/ / / /  / /_/ / /__/ ,<   
-    \____/_/ /_/\____/____/\__/     /_/ /_/   \__,_/\___/_/|_| 
-
-              {Wh}[ + ]  C O D E   B Y  H U N X  [ + ]
+       Tools Pelacakan
+              {Wh}[ + ]  F  [ + ]
     """)
 
     stderr.writelines(f"\n\n\n{option_text()}")
@@ -276,19 +263,7 @@ def run_banner():
     clear()
     time.sleep(1)
     stderr.writelines(f"""{Wh}
-         .-.
-       .'   `.          {Wh}--------------------------------
-       :g g   :         {Wh}| {Gr}GHOST - TRACKER - IP ADDRESS {Wh}|
-       : o    `.        {Wh}|       {Gr}@CODE BY HUNXBYTS      {Wh}|
-      :         ``.     {Wh}--------------------------------
-     :             `.
-    :  :         .   `.
-    :   :          ` . `.
-     `.. :            `. ``;
-        `:;             `:'
-           :              `.
-            `.              `.     .
-              `'`'`'`---..,___`;.-'
+    
         """)
     time.sleep(0.5)
 
@@ -298,10 +273,10 @@ def main():
     option()
     time.sleep(1)
     try:
-        opt = int(input(f"{Wh}\n [ + ] {Gr}Select Option : {Wh}"))
+        opt = int(input(f"{Wh}\n [ + ] {Gr}Pilih Opsi : {Wh}"))
         execute_option(opt)
     except ValueError:
-        print(f'\n{Wh}[ {Re}! {Wh}] {Re}Please input number')
+        print(f'\n{Wh}[ {Re}! {Wh}] {Re}Ketik Nomor Menu')
         time.sleep(2)
         main()
 
