@@ -177,7 +177,7 @@ options = [
     },
     {
         'num': 2,
-        'text': 'Tampilkan Alamat IP',
+        'text': 'Alamat IP Saya',
         'func': showIP
 
     },
@@ -252,7 +252,7 @@ def option():
     # BANNER TOOLS
     clear()
     stderr.writelines(f"""
-       v1
+       F
               {Wh}[ + ]  Tools Pelacakan  [ + ]
     """)
 
