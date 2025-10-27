@@ -163,7 +163,7 @@ def showIP():
     respone = requests.get('https://api.ipify.org/')
     Show_IP = respone.text
 
-    print(f"\n {Wh}========== {Gr}MENAMPILKAN INFORMASI ALAMAT IP {Wh}==========")
+    print(f"\n {Wh}========== {Gr}MENAMPILKAN INFORMASI ALAMAT IP KAMU {Wh}==========")
     print(f"\n {Wh}[{Gr} + {Wh}] Alamat ip : {Gr}{Show_IP}")
     print(f"\n {Wh}==============================================")
 
@@ -172,28 +172,28 @@ def showIP():
 options = [
     {
         'num': 1,
-        'text': 'IP Tracker',
+        'text': 'Lacak IP Target',
         'func': IP_Track
     },
     {
         'num': 2,
-        'text': 'Show Your IP',
+        'text': 'Tampilkan Alamat IP',
         'func': showIP
 
     },
     {
         'num': 3,
-        'text': 'Phone Number Tracker',
+        'text': 'Lacak Nomor Ponsel',
         'func': phoneGW
     },
     {
         'num': 4,
-        'text': 'Username Tracker',
+        'text': 'Lacak Username Akun',
         'func': TrackLu
     },
     {
         'num': 0,
-        'text': 'Exit',
+        'text': 'Keluar',
         'func': exit
     }
 ]
@@ -210,19 +210,19 @@ def clear():
 
 def call_option(opt):
     if not is_in_options(opt):
-        raise ValueError('Option not found')
+        raise ValueError('tdk ada opsi')
     for option in options:
         if option['num'] == opt:
             if 'func' in option:
                 option['func']()
             else:
-                print('No function detected')
+                print('terdeksi tdk berfungsi')
 
 
 def execute_option(opt):
     try:
         call_option(opt)
-        input(f'\n{Wh}[ {Gr}+ {Wh}] {Gr}Press enter to continue')
+        input(f'\n{Wh}[ {Gr}+ {Wh}] {Gr}Tekan Enter Untuk Ke Menu')
         main()
     except ValueError as e:
         print(e)
@@ -252,8 +252,8 @@ def option():
     # BANNER TOOLS
     clear()
     stderr.writelines(f"""
-       Tools Pelacakan
-              {Wh}[ + ]  F  [ + ]
+       v1
+              {Wh}[ + ]  Tools Pelacakan  [ + ]
     """)
 
     stderr.writelines(f"\n\n\n{option_text()}")
@@ -273,7 +273,7 @@ def main():
     option()
     time.sleep(1)
     try:
-        opt = int(input(f"{Wh}\n [ + ] {Gr}Pilih Opsi : {Wh}"))
+        opt = int(input(f"{Wh}\n [ + ] {Gr}Pilih Opsi Nomor : {Wh}"))
         execute_option(opt)
     except ValueError:
         print(f'\n{Wh}[ {Re}! {Wh}] {Re}Ketik Nomor Menu')
